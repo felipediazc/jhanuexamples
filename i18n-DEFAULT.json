@@ -1,0 +1,199 @@
+{
+    "data": [
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 1,
+            "lang": "es",
+            "keystr": "menu_settings_menu",
+            "value": "Opciones del menú"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 2,
+            "lang": "en",
+            "keystr": "menu_settings_menu",
+            "value": "Menu options"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 5,
+            "lang": "en",
+            "keystr": "menu_settings",
+            "value": "Settings"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 6,
+            "lang": "es",
+            "keystr": "menu_settings",
+            "value": "Configuración"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 33,
+            "lang": "es",
+            "keystr": "menu_preferences",
+            "value": "Preferencias"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 34,
+            "lang": "en",
+            "keystr": "menu_preferences",
+            "value": "Preferences"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 37,
+            "lang": "es",
+            "keystr": "menu_forms_reports",
+            "value": "Formularios y Servicios"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 38,
+            "lang": "en",
+            "keystr": "menu_forms_reports",
+            "value": "Forms and services"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 62,
+            "lang": "es",
+            "keystr": "menu_webpages",
+            "value": "Páginas Web"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 63,
+            "lang": "en",
+            "keystr": "menu_webpages",
+            "value": "Web Pages"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 86,
+            "lang": "es",
+            "keystr": "users",
+            "value": "Usuarios"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 87,
+            "lang": "en",
+            "keystr": "users",
+            "value": "Users"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 218,
+            "lang": "es",
+            "keystr": "reports",
+            "value": "Reportes"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 219,
+            "lang": "en",
+            "keystr": "reports",
+            "value": "Reports"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 233,
+            "lang": "es",
+            "keystr": "menu_cron",
+            "value": "Cron"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 234,
+            "lang": "en",
+            "keystr": "menu_cron",
+            "value": "Cron"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 289,
+            "lang": "es",
+            "keystr": "menu_security",
+            "value": "Seguridad"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 290,
+            "lang": "en",
+            "keystr": "menu_security",
+            "value": "Security"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 293,
+            "lang": "es",
+            "keystr": "form_devices_name",
+            "value": "Nombre"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 294,
+            "lang": "en",
+            "keystr": "form_devices_name",
+            "value": "Name"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 295,
+            "lang": "es",
+            "keystr": "form_devices_title",
+            "value": "Tipo de Dispositivos"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 296,
+            "lang": "en",
+            "keystr": "form_devices_title",
+            "value": "Devices Types"
+        },
+        {
+            "filter": "event",
+            "site": "STRING_NULL",
+            "id": 297,
+            "lang": "es",
+            "keystr": "form_devices_type_save",
+            "value": "Guardar"
+        },
+        {
+            "filter": "event",
+            "site": "STRING_NULL",
+            "id": 298,
+            "lang": "en",
+            "keystr": "form_devices_type_save",
+            "value": "Save"
+        }
+    ],
+    "columnpk": "id",
+    "table": "jnu_i18n",
+    "dependencies": []
+}
