@@ -1,0 +1,127 @@
+{
+    "data": [],
+    "columnpk": "id",
+    "table": "jnu_eventactions",
+    "dependencies": [
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_actionscripts"
+        },
+        {
+            "data": [{"sitename": "DEFAULT"}],
+            "columnpk": "sitename",
+            "updateOnExist": false,
+            "table": "jnu_sites"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "usercreate": "admin@localhost.com",
+                "regdate": "2022-11-08 11:14:31.0",
+                "id": "12-example"
+            }],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_projects"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_jdbc"
+        },
+        {
+            "data": [{
+                "css": "STRING_NULL",
+                "description": "Places Report. Its uses a Form as Filter",
+                "project": "12-example",
+                "jdbc": "STRING_NULL",
+                "showtitle": true,
+                "usecache": false,
+                "title": "placesreportform_title",
+                "jshead": "STRING_NULL",
+                "jsbody": "STRING_NULL",
+                "jsonobject": "STRING_NULL",
+                "componenttype": "REPORT",
+                "usercreate": "admin@localhost.com",
+                "id": "12-placesreport",
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_components"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_componentparts"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_events"
+        },
+        {
+            "data": [],
+            "columnpk": "role",
+            "updateOnExist": false,
+            "table": "jnu_roles"
+        },
+        {
+            "data": [],
+            "columnpk": "eventid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_eventaccess"
+        },
+        {
+            "data": [],
+            "columnpk": "componentid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_componentaccess"
+        },
+        {
+            "data": [
+                {
+                    "component": "12-placesreport",
+                    "usercreate": "admin@localhost.com",
+                    "actionclass": "com.fdcapps.jhanu.reportpart.JnuTableSql",
+                    "actiondata": "{\"sql\":\"SELECT co.name AS country, d.name AS department, c.name AS city \\nFROM jnu_cities c \\nJOIN jnu_departments d ON c.department = d.id \\nJOIN jnu_countries co ON d.country = co.id \\nWHERE LOWER(co.name) LIKE '%' || LOWER(?) ||'%' \\nAND LOWER(d.name) LIKE '%' || LOWER(?) ||'%' \\n\",\"javaclass\":\"com.fdcapps.jhanu.reportpart.obj.JnuTableSqlObj\",\"id\":29,\"name\":\"placesreportform_title\",\"showtitle\":false,\"smartsql\":false,\"condition\":\"\",\"excel\":false,\"enumerate\":false,\"showtotal\":false,\"sendmultiple\":false,\"firstcolumnicon\":false,\"paginate\":10,\"hiddencolumns\":\"\",\"jdbc\":\"12-jnucon\",\"destinytype\":\"\",\"destiny\":\"\",\"params\":\"\",\"paramvalues\":\"\",\"columndefinition\":\"\",\"varid\":\"placestable\",\"data\":[{\"key\":\"country\",\"value\":\"STRING\"},{\"key\":\"department\",\"value\":\"STRING\"}]}",
+                    "name": "STRING_NULL",
+                    "description": "MainSQL                    ",
+                    "id": 29,
+                    "seq": 1,
+                    "userupdate": "admin@localhost.com"
+                },
+                {
+                    "component": "12-placesreport",
+                    "usercreate": "admin@localhost.com",
+                    "actionclass": "com.fdcapps.jhanu.reportpart.JnuTableSql",
+                    "actiondata": "{\"sql\":\"SELECT COUNT(id) AS size FROM jnu_countries\",\"javaclass\":\"com.fdcapps.jhanu.reportpart.obj.JnuTableSqlObj\",\"id\":30,\"name\":\"customers_country\",\"showtitle\":false,\"smartsql\":false,\"condition\":\"country != null\",\"excel\":false,\"enumerate\":false,\"showtotal\":false,\"sendmultiple\":false,\"firstcolumnicon\":false,\"hiddencolumns\":\"\",\"jdbc\":\"12-jnucon\",\"destinytype\":\"\",\"destiny\":\"\",\"params\":\"\",\"paramvalues\":\"\",\"columndefinition\":\"\",\"varid\":\"countrysizetable\",\"data\":[]}",
+                    "name": "STRING_NULL",
+                    "description": "SQL sentence with condition                    ",
+                    "id": 30,
+                    "seq": 3,
+                    "userupdate": "admin@localhost.com"
+                },
+                {
+                    "component": "12-placesreport",
+                    "usercreate": "admin@localhost.com",
+                    "actionclass": "com.fdcapps.jhanu.reportpart.JnuHtml",
+                    "actiondata": "{\"html\":\"<center><h1>Number of countries in database <\/h1><\/center>\",\"javaclass\":\"com.fdcapps.jhanu.reportpart.obj.JnuHtmlObj\",\"id\":31,\"name\":\"Number of countries title \",\"condition\":\"country != null\"}",
+                    "name": "STRING_NULL",
+                    "description": "title with condition                    ",
+                    "id": 31,
+                    "seq": 2,
+                    "userupdate": "admin@localhost.com"
+                }
+            ],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_reportparts"
+        }
+    ]
+}

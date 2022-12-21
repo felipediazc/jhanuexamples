@@ -196,7 +196,7 @@
                 "showtitle": true,
                 "usecache": false,
                 "title": "form_devices_title",
-                "jshead": "STRING_NULL",
+                "jshead": "function jnu_postUserCallBack(obj,json){\n    if(json.error == \"\"){\n        window.location.href = appName + \"/rp/12-example/12-devicetypereport\";\n    }\n}",
                 "jsbody": "STRING_NULL",
                 "jsonobject": "{\"data\":[{\"key\":\"id\",\"value\":\"INTEGER\"}],\"sql\":\"SELECT id, name FROM devicetypes WHERE id = ?\",\"javaclass\":\"com.jhanu.core.obj.SqlObject\"}",
                 "componenttype": "FORM",

@@ -1,0 +1,116 @@
+{
+    "data": [],
+    "columnpk": "id",
+    "table": "jnu_eventactions",
+    "dependencies": [
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_actionscripts"
+        },
+        {
+            "data": [{"sitename": "DEFAULT"}],
+            "columnpk": "sitename",
+            "updateOnExist": false,
+            "table": "jnu_sites"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "usercreate": "admin@localhost.com",
+                "regdate": "2022-11-08 11:14:31.0",
+                "id": "12-example"
+            }],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_projects"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_jdbc"
+        },
+        {
+            "data": [{
+                "css": "STRING_NULL",
+                "description": "Signed documents report",
+                "project": "12-example",
+                "jdbc": "STRING_NULL",
+                "showtitle": true,
+                "usecache": false,
+                "title": "signeddocuments_title",
+                "jshead": "function show(obj){\n    let table = $('#signeddocuments').DataTable();\n    let data = table.row($(obj).parents('tr')).data();\n    window.open(appName + \"/ws/json/12-signeddocuemnts/view?id=\" + data.id, '_blank').focus();\n}\n\n$(\"#add\").click(function(){\n    window.location= appName + \"/ap/12-example/12-signeddocuemnts\"\n})",
+                "jsbody": "STRING_NULL",
+                "jsonobject": "STRING_NULL",
+                "componenttype": "REPORT",
+                "usercreate": "admin@localhost.com",
+                "id": "12-signeddocumentsreport",
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_components"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_componentparts"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_events"
+        },
+        {
+            "data": [],
+            "columnpk": "role",
+            "updateOnExist": false,
+            "table": "jnu_roles"
+        },
+        {
+            "data": [],
+            "columnpk": "eventid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_eventaccess"
+        },
+        {
+            "data": [],
+            "columnpk": "componentid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_componentaccess"
+        },
+        {
+            "data": [
+                {
+                    "component": "12-signeddocumentsreport",
+                    "usercreate": "admin@localhost.com",
+                    "actionclass": "com.fdcapps.jhanu.reportpart.JnuTableSql",
+                    "actiondata": "{\"sql\":\"SELECT id, document FROM signeddocuments WHERE userid = ?\",\"javaclass\":\"com.fdcapps.jhanu.reportpart.obj.JnuTableSqlObj\",\"id\":27,\"name\":\"signeddocuments_text\",\"showtitle\":false,\"smartsql\":true,\"condition\":\"\",\"excel\":false,\"enumerate\":false,\"showtotal\":false,\"sendmultiple\":false,\"firstcolumnicon\":false,\"hiddencolumns\":\"\",\"jdbc\":\"12-rmm\",\"destinytype\":\"\",\"destiny\":\"\",\"params\":\"\",\"paramvalues\":\"\",\"columndefinition\":\"{\\n\\\"3\\\" : \\\"<span onclick=\\\\\\\"show(this)\\\\\\\" class=\\\\\\\"spanOption glyphicon glyphicon-eye-open\\\\\\\"  title=\\\\\\\"Show\\\\\\\"><\/span>\\\",\\n}\",\"varid\":\"signeddocuments\",\"data\":[{\"key\":\"_JNUUSERID_\",\"value\":\"INTEGER\"}]}",
+                    "name": "STRING_NULL",
+                    "description": "STRING_NULL",
+                    "id": 27,
+                    "seq": 2,
+                    "userupdate": "admin@localhost.com"
+                },
+                {
+                    "component": "12-signeddocumentsreport",
+                    "usercreate": "admin@localhost.com",
+                    "actionclass": "com.fdcapps.jhanu.reportpart.JnuHtml",
+                    "actiondata": "{\"html\":\"<br/><input type=\\\"button\\\" id=\\\"add\\\" value=\\\"Add New\\\">\",\"javaclass\":\"com.fdcapps.jhanu.reportpart.obj.JnuHtmlObj\",\"id\":28,\"name\":\"addbutton\",\"condition\":\"\"}",
+                    "name": "STRING_NULL",
+                    "description": "Add button                    ",
+                    "id": 28,
+                    "seq": 1,
+                    "userupdate": "admin@localhost.com"
+                }
+            ],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_reportparts"
+        }
+    ]
+}

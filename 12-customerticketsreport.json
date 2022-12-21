@@ -1,0 +1,120 @@
+{
+    "data": [],
+    "columnpk": "id",
+    "table": "jnu_eventactions",
+    "dependencies": [
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_actionscripts"
+        },
+        {
+            "data": [{"sitename": "DEFAULT"}],
+            "columnpk": "sitename",
+            "updateOnExist": false,
+            "table": "jnu_sites"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "usercreate": "admin@localhost.com",
+                "regdate": "2022-11-08 11:14:31.0",
+                "id": "12-example"
+            }],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_projects"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_jdbc"
+        },
+        {
+            "data": [{
+                "css": "STRING_NULL",
+                "description": "Customer Tickets Report",
+                "project": "12-example",
+                "jdbc": "STRING_NULL",
+                "showtitle": true,
+                "usecache": false,
+                "title": "customertickets_title",
+                "jshead": "$(\"#add\").click(function(){\n    window.location= appName + \"/ap/12-example/12-customertickets\"\n})\n\nfunction downloadFile(fileId){\n    window.location= appName + \"/Download/\" + fileId + \"/\";\n}\n\nfunction downloadFileWidget(fileId){\n    if(fileId == null || fileId == \"\"){\n        return \"&nbsp;\";\n    }\n    return \"<span onclick=\\\"downloadFile(\" + fileId + \")\\\" class=\\\"spanOption fas fa-cloud-download-alt\\\" title=\\\"Download\\\"><\/span>\";\n}\n\nfunction deleteRow(obj){\n    var table = $('#customertickets').DataTable();\n    var data = table.row($(obj).parents('tr')).data();\n    alertify.confirm(\"Are you sure?\",\n        function(){\n          doDelete(data.id);\n        },\n        function(){\n            alertify.error(\"user canceled\");\n        }\n    );\n}\n\nfunction doDelete(id){\n    doBlockUiModal();\n    $.ajax({\n        type: 'POST',\n        url: appName + '/ws/json/12-customertickets/delete',\n        data: {\n            id: id,\n        },\n        success: function(responseData){\n            $.unblockUI();\n            let jsonObject = eval(responseData);\n            if(jsonObject.error) {\n                errorMsg(jsonObject.error);\n            } else {\n                window.location =  appName + '/rp/12-example/12-customerticketsreport';\n            }\n        }\n    })\n}",
+                "jsbody": "STRING_NULL",
+                "jsonobject": "STRING_NULL",
+                "componenttype": "REPORT",
+                "usercreate": "admin@localhost.com",
+                "id": "12-customerticketsreport",
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_components"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_componentparts"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_events"
+        },
+        {
+            "data": [{"role": "GUEST"}],
+            "columnpk": "role",
+            "updateOnExist": false,
+            "table": "jnu_roles"
+        },
+        {
+            "data": [],
+            "columnpk": "eventid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_eventaccess"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "componentid": "12-customerticketsreport",
+                "role": "GUEST"
+            }],
+            "columnpk": "componentid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_componentaccess"
+        },
+        {
+            "data": [
+                {
+                    "component": "12-customerticketsreport",
+                    "usercreate": "admin@localhost.com",
+                    "actionclass": "com.fdcapps.jhanu.reportpart.JnuTableSql",
+                    "actiondata": "{\"sql\":\"SELECT ct.id, c.name, ct.comments, ct.fileid, ct.signature, customer FROM customertickets ct \\nLEFT OUTER JOIN customers c ON ct.customer = c.id \",\"javaclass\":\"com.fdcapps.jhanu.reportpart.obj.JnuTableSqlObj\",\"id\":25,\"name\":\"customertickets_title\",\"showtitle\":false,\"condition\":\"\",\"excel\":false,\"enumerate\":false,\"showtotal\":false,\"sendmultiple\":false,\"firstcolumnicon\":false,\"hiddencolumns\":\"6\",\"jdbc\":\"12-rmm\",\"destinytype\":\"FORM\",\"destiny\":\"12-customertickets\",\"params\":\"id\",\"paramvalues\":\"id\",\"columndefinition\":\"\\n{\\n    \\\"fileid\\\" : \\\" render: function (data, type, row) { return downloadFileWidget(data);}\\\",\\n    \\\"6\\\": \\\"<span onclick=\\\\\\\"deleteRow(this)\\\\\\\" class=\\\\\\\"spanOption glyphicon glyphicon-trash\\\\\\\" title=\\\\\\\"delete\\\\\\\"><\/span>\\\"\\n}\\n\",\"varid\":\"customertickets\",\"data\":[]}",
+                    "name": "STRING_NULL",
+                    "description": "Main SQL for customertickets table                    ",
+                    "id": 25,
+                    "seq": 2,
+                    "userupdate": "admin@localhost.com"
+                },
+                {
+                    "component": "12-customerticketsreport",
+                    "usercreate": "admin@localhost.com",
+                    "actionclass": "com.fdcapps.jhanu.reportpart.JnuHtml",
+                    "actiondata": "{\"html\":\"<br/><input type=\\\"button\\\" id=\\\"add\\\" value=\\\"Add New\\\">\",\"javaclass\":\"com.fdcapps.jhanu.reportpart.obj.JnuHtmlObj\",\"id\":26,\"name\":\"addbutton\",\"condition\":\"\"}",
+                    "name": "STRING_NULL",
+                    "description": "Add button                    ",
+                    "id": 26,
+                    "seq": 1,
+                    "userupdate": "admin@localhost.com"
+                }
+            ],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_reportparts"
+        }
+    ]
+}

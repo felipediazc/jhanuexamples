@@ -1,0 +1,223 @@
+{
+    "data": [
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOpenDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOpenDatabaseConObj\",\"id\":\"720\",\"outputvar\":\"con\",\"jdbc\":\"12-rmm\",\"autocommit\":true}",
+            "eventaction": "INT_NULL",
+            "description": "Connection to RMM                    ",
+            "jdbc": "12-rmm",
+            "id": 720,
+            "event": 133,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteSql",
+            "actiondata": "{\"data\":[],\"sql\":\"SELECT fileid FROM customertickets ORDER BY id DESC\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteSqlObj\",\"id\":\"721\",\"outputvar\":\"jsonFiles\",\"jdbc\":\"con\",\"paginate\":false,\"smartsql\":false,\"maxreg\":\"\",\"pagevar\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "get last fileid                    ",
+            "jdbc": "STRING_NULL",
+            "id": 721,
+            "event": 133,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"722\",\"code\":\"jsonFiles = Common.getFirstData(jsonFiles);\\nif(!jsonFiles.has(\\\"fileid\\\") || jsonFiles.fileid == \\\"\\\"){\\n    JSONObject errorResponse = new JSONObject();\\n    errorResponse.put(\\\"error\\\", \\\"there is no file on last customer ticket record\\\");\\n    return errorResponse;\\n}\"}",
+            "eventaction": "INT_NULL",
+            "description": " test if fileid exists. If not, returns with an error msg",
+            "jdbc": "STRING_NULL",
+            "id": 722,
+            "event": 133,
+            "seq": 4,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCloseDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCloseDatabaseConObj\",\"id\":\"723\",\"outputvar\":\"con\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 723,
+            "event": 133,
+            "seq": 3,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuSendEmail",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuSendEmailObj\",\"id\":\"724\",\"to\":\"${email} \",\"subject\":\"test with attacment\",\"attachments\":\"${fileid}\",\"body\":\"This is the body\"}",
+            "eventaction": "INT_NULL",
+            "description": "Send an email with attachment                    ",
+            "jdbc": "STRING_NULL",
+            "id": 724,
+            "event": 133,
+            "seq": 6,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"725\",\"code\":\"return new JSONObject();\"}",
+            "eventaction": "INT_NULL",
+            "description": "return with success                    ",
+            "jdbc": "STRING_NULL",
+            "id": 725,
+            "event": 133,
+            "seq": 7,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuVar",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuVarObj\",\"id\":\"726\",\"varname\":\"fileid\",\"varvalue\":\"jsonFiles.fileid\",\"type\":\"USERDEF\"}",
+            "eventaction": "INT_NULL",
+            "description": "fileid                    ",
+            "jdbc": "STRING_NULL",
+            "id": 726,
+            "event": 133,
+            "seq": 5,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        }
+    ],
+    "columnpk": "id",
+    "table": "jnu_eventactions",
+    "dependencies": [
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_actionscripts"
+        },
+        {
+            "data": [{"sitename": "DEFAULT"}],
+            "columnpk": "sitename",
+            "updateOnExist": false,
+            "table": "jnu_sites"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "usercreate": "admin@localhost.com",
+                "regdate": "2022-11-08 11:14:31.0",
+                "id": "12-example"
+            }],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_projects"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_jdbc"
+        },
+        {
+            "data": [{
+                "css": "STRING_NULL",
+                "description": "Example of how to send an email with an attachment",
+                "project": "12-example",
+                "jdbc": "STRING_NULL",
+                "showtitle": true,
+                "usecache": false,
+                "title": "emailfileexample_title",
+                "jshead": "STRING_NULL",
+                "jsbody": "STRING_NULL",
+                "jsonobject": "STRING_NULL",
+                "componenttype": "FORM",
+                "usercreate": "admin@localhost.com",
+                "id": "12-sendemailwithfile",
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_components"
+        },
+        {
+            "data": [{
+                "valbyrequest": "STRING_NULL",
+                "valbyquery": "STRING_NULL",
+                "dependon": "STRING_NULL",
+                "column": "STRING_NULL",
+                "tabgroup": "STRING_NULL",
+                "label": "customers_email",
+                "showlabel": true,
+                "varname": "email",
+                "canbenull": false,
+                "component": "12-sendemailwithfile",
+                "valbydefault": "STRING_NULL",
+                "size": 300,
+                "datatype": "STRING",
+                "usercreate": "admin@localhost.com",
+                "action": "STRING_NULL",
+                "json": "STRING_NULL",
+                "id": 128,
+                "placeholder": "STRING_NULL",
+                "seq": 1,
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_componentparts"
+        },
+        {
+            "data": [{
+                "component": "12-sendemailwithfile",
+                "name": "send",
+                "project": "12-example",
+                "conf": "{\"eventcontenttype\":\"application/json;charset=UTF-8\",\"requestcontenttype\":\"application/x-www-form-urlencoded\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":true,\"eventexusing\":\"ajax\",\"submitdestiny\":\"\",\"eventmethod\":\"POST\",\"eventcors\":false,\"inputs\":[{\"checked\":false,\"id\":\"128\",\"label\":\"customers_email\",\"varname\":\"email\"}],\"outputs\":[]}",
+                "id": 133,
+                "label": "STRING_NULL",
+                "seq": 1,
+                "enabled": true
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_events"
+        },
+        {
+            "data": [{"role": "GUEST"}],
+            "columnpk": "role",
+            "updateOnExist": false,
+            "table": "jnu_roles"
+        },
+        {
+            "data": [{
+                "eventid": 133,
+                "site": "DEFAULT",
+                "role": "GUEST"
+            }],
+            "columnpk": "eventid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_eventaccess"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "componentid": "12-sendemailwithfile",
+                "role": "GUEST"
+            }],
+            "columnpk": "componentid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_componentaccess"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_reportparts"
+        }
+    ]
+}

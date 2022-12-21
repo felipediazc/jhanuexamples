@@ -1,0 +1,107 @@
+{
+    "data": [],
+    "columnpk": "id",
+    "table": "jnu_eventactions",
+    "dependencies": [
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_actionscripts"
+        },
+        {
+            "data": [{"sitename": "DEFAULT"}],
+            "columnpk": "sitename",
+            "updateOnExist": false,
+            "table": "jnu_sites"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "usercreate": "admin@localhost.com",
+                "regdate": "2022-11-08 11:14:31.0",
+                "id": "12-example"
+            }],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_projects"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_jdbc"
+        },
+        {
+            "data": [{
+                "css": ".odd {\n    height: 200px;\n}",
+                "description": "Listo of all customers",
+                "project": "12-example",
+                "jdbc": "STRING_NULL",
+                "showtitle": true,
+                "usecache": false,
+                "title": "customers_title",
+                "jshead": "function imageUrl(data){\n    let imgUrl = jnuGetImgUrl(data);\n    return \"<img src='\" + imgUrl + \"'>\";\n}",
+                "jsbody": "STRING_NULL",
+                "jsonobject": "STRING_NULL",
+                "componenttype": "REPORT",
+                "usercreate": "admin@localhost.com",
+                "id": "12-customersreport",
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_components"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_componentparts"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_events"
+        },
+        {
+            "data": [{"role": "GUEST"}],
+            "columnpk": "role",
+            "updateOnExist": false,
+            "table": "jnu_roles"
+        },
+        {
+            "data": [],
+            "columnpk": "eventid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_eventaccess"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "componentid": "12-customersreport",
+                "role": "GUEST"
+            }],
+            "columnpk": "componentid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_componentaccess"
+        },
+        {
+            "data": [{
+                "component": "12-customersreport",
+                "usercreate": "admin@localhost.com",
+                "actionclass": "com.fdcapps.jhanu.reportpart.JnuTableSql",
+                "actiondata": "{\"sql\":\"SELECT id, name, city, documenttype, documentid, email, birthdate, userid, policyaccepted, photoid\\nFROM customers\",\"javaclass\":\"com.fdcapps.jhanu.reportpart.obj.JnuTableSqlObj\",\"id\":24,\"name\":\"customers_title\",\"showtitle\":false,\"condition\":\"\",\"excel\":false,\"enumerate\":false,\"showtotal\":true,\"sendmultiple\":false,\"firstcolumnicon\":false,\"hiddencolumns\":\"\",\"jdbc\":\"12-rmm\",\"destinytype\":\"\",\"destiny\":\"\",\"params\":\"\",\"paramvalues\":\"\",\"columndefinition\":\"{\\n \\\"photoid\\\": \\\" render: function (data, type, row) { return imageUrl(data);}\\\"\\n}\",\"varid\":\"customers\",\"data\":[]}",
+                "name": "STRING_NULL",
+                "description": "List of all customers                    ",
+                "id": 24,
+                "seq": 1,
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_reportparts"
+        }
+    ]
+}

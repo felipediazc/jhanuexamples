@@ -1,0 +1,177 @@
+{
+    "data": [],
+    "columnpk": "id",
+    "table": "jnu_eventactions",
+    "dependencies": [
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_actionscripts"
+        },
+        {
+            "data": [{"sitename": "DEFAULT"}],
+            "columnpk": "sitename",
+            "updateOnExist": false,
+            "table": "jnu_sites"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "usercreate": "admin@localhost.com",
+                "regdate": "2022-11-08 11:14:31.0",
+                "id": "12-example"
+            }],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_projects"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_jdbc"
+        },
+        {
+            "data": [{
+                "css": "STRING_NULL",
+                "description": "Form which works as a report filter",
+                "project": "12-example",
+                "jdbc": "STRING_NULL",
+                "showtitle": true,
+                "usecache": false,
+                "title": "placesreportform_title",
+                "jshead": "STRING_NULL",
+                "jsbody": "STRING_NULL",
+                "jsonobject": "STRING_NULL",
+                "componenttype": "FORM",
+                "usercreate": "admin@localhost.com",
+                "id": "12-placesreportform",
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_components"
+        },
+        {
+            "data": [
+                {
+                    "valbyrequest": "STRING_NULL",
+                    "valbyquery": "STRING_NULL",
+                    "dependon": "STRING_NULL",
+                    "column": "STRING_NULL",
+                    "tabgroup": "STRING_NULL",
+                    "label": "customers_country",
+                    "showlabel": true,
+                    "varname": "country",
+                    "canbenull": true,
+                    "component": "12-placesreportform",
+                    "valbydefault": "STRING_NULL",
+                    "size": "INT_NULL",
+                    "datatype": "STRING",
+                    "usercreate": "admin@localhost.com",
+                    "action": "STRING_NULL",
+                    "json": "STRING_NULL",
+                    "id": 131,
+                    "placeholder": "STRING_NULL",
+                    "seq": 1,
+                    "userupdate": "admin@localhost.com"
+                },
+                {
+                    "valbyrequest": "STRING_NULL",
+                    "valbyquery": "STRING_NULL",
+                    "dependon": "STRING_NULL",
+                    "column": "STRING_NULL",
+                    "tabgroup": "STRING_NULL",
+                    "label": "customers_department",
+                    "showlabel": true,
+                    "varname": "department",
+                    "canbenull": true,
+                    "component": "12-placesreportform",
+                    "valbydefault": "STRING_NULL",
+                    "size": "INT_NULL",
+                    "datatype": "STRING",
+                    "usercreate": "admin@localhost.com",
+                    "action": "STRING_NULL",
+                    "json": "STRING_NULL",
+                    "id": 132,
+                    "placeholder": "STRING_NULL",
+                    "seq": 2,
+                    "userupdate": "admin@localhost.com"
+                },
+                {
+                    "valbyrequest": "STRING_NULL",
+                    "valbyquery": "STRING_NULL",
+                    "dependon": "STRING_NULL",
+                    "column": "STRING_NULL",
+                    "tabgroup": "STRING_NULL",
+                    "label": "customers_city",
+                    "showlabel": true,
+                    "varname": "city",
+                    "canbenull": true,
+                    "component": "12-placesreportform",
+                    "valbydefault": "STRING_NULL",
+                    "size": "INT_NULL",
+                    "datatype": "STRING",
+                    "usercreate": "admin@localhost.com",
+                    "action": "STRING_NULL",
+                    "json": "STRING_NULL",
+                    "id": 133,
+                    "placeholder": "STRING_NULL",
+                    "seq": 3,
+                    "userupdate": "admin@localhost.com"
+                }
+            ],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_componentparts"
+        },
+        {
+            "data": [{
+                "component": "12-placesreportform",
+                "name": "search",
+                "project": "12-example",
+                "conf": "{\"eventcontenttype\":\"application/json;charset=UTF-8\",\"requestcontenttype\":\"application/x-www-form-urlencoded\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":true,\"eventexusing\":\"submit\",\"submitdestiny\":\"12-placesreport\",\"eventmethod\":\"ALL\",\"eventcors\":false,\"inputs\":[{\"checked\":false,\"id\":\"131\",\"label\":\"customers_country\",\"varname\":\"country\"},{\"checked\":false,\"id\":\"132\",\"label\":\"customers_department\",\"varname\":\"department\"},{\"checked\":false,\"id\":\"133\",\"label\":\"customers_city\",\"varname\":\"city\"}],\"outputs\":[]}",
+                "id": 138,
+                "label": "STRING_NULL",
+                "seq": 1,
+                "enabled": true
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_events"
+        },
+        {
+            "data": [{"role": "GUEST"}],
+            "columnpk": "role",
+            "updateOnExist": false,
+            "table": "jnu_roles"
+        },
+        {
+            "data": [{
+                "eventid": 138,
+                "site": "DEFAULT",
+                "role": "GUEST"
+            }],
+            "columnpk": "eventid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_eventaccess"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "componentid": "12-placesreportform",
+                "role": "GUEST"
+            }],
+            "columnpk": "componentid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_componentaccess"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_reportparts"
+        }
+    ]
+}

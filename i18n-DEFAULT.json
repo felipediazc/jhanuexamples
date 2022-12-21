@@ -191,6 +191,438 @@
             "lang": "en",
             "keystr": "form_devices_type_save",
             "value": "Save"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 301,
+            "lang": "es",
+            "keystr": "mailexample_title",
+            "value": "ddd"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 302,
+            "lang": "es",
+            "keystr": "ejemplo_x_title",
+            "value": "hola"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 303,
+            "lang": "en",
+            "keystr": "emailexample_title",
+            "value": "Email Example"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 304,
+            "lang": "es",
+            "keystr": "emailexample_title",
+            "value": "Ejemplo de email"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 305,
+            "lang": "en",
+            "keystr": "emailexample_email",
+            "value": "email"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 306,
+            "lang": "es",
+            "keystr": "emailexample_email",
+            "value": "email"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 307,
+            "lang": "es",
+            "keystr": "customers_title",
+            "value": "Clientes"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 308,
+            "lang": "en",
+            "keystr": "customers_title",
+            "value": "Customers"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 309,
+            "lang": "es",
+            "keystr": "customers_name",
+            "value": "Nombre"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 310,
+            "lang": "en",
+            "keystr": "customers_name",
+            "value": "Name"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 311,
+            "lang": "es",
+            "keystr": "customers_document_type",
+            "value": "Tipo de documento"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 312,
+            "lang": "en",
+            "keystr": "customers_document_type",
+            "value": "Document type"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 313,
+            "lang": "es",
+            "keystr": "customers_document",
+            "value": "Documento"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 314,
+            "lang": "en",
+            "keystr": "customers_document",
+            "value": "Document Id"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 315,
+            "lang": "es",
+            "keystr": "customers_city",
+            "value": "City"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 316,
+            "lang": "en",
+            "keystr": "customers_city",
+            "value": "Ciudad"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 317,
+            "lang": "es",
+            "keystr": "customers_country",
+            "value": "Pais"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 318,
+            "lang": "en",
+            "keystr": "customers_country",
+            "value": "Country"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 319,
+            "lang": "es",
+            "keystr": "customers_department",
+            "value": "Departamento"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 320,
+            "lang": "en",
+            "keystr": "customers_department",
+            "value": "Region"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 321,
+            "lang": "es",
+            "keystr": "customers_email",
+            "value": "Email"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 322,
+            "lang": "en",
+            "keystr": "customers_email",
+            "value": "Email"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 323,
+            "lang": "es",
+            "keystr": "customers_birthdate",
+            "value": "Fecha de nacimiento"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 324,
+            "lang": "en",
+            "keystr": "customers_birthdate",
+            "value": "Birth date"
+        },
+        {
+            "filter": "event",
+            "site": "STRING_NULL",
+            "id": 327,
+            "lang": "es",
+            "keystr": "customer_no_userid_error",
+            "value": "debe especificar el userid"
+        },
+        {
+            "filter": "event",
+            "site": "STRING_NULL",
+            "id": 328,
+            "lang": "en",
+            "keystr": "customer_no_userid_error",
+            "value": "Must set userid"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 329,
+            "lang": "es",
+            "keystr": "customer_policyaccepted",
+            "value": "Acepta politica de datos"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 330,
+            "lang": "en",
+            "keystr": "customer_policyaccepted",
+            "value": "Data policy accepted"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 331,
+            "lang": "es",
+            "keystr": "customer_photo",
+            "value": "Foto"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 332,
+            "lang": "en",
+            "keystr": "customer_photo",
+            "value": "Photo"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 333,
+            "lang": "es",
+            "keystr": "customertickets_title",
+            "value": "Customer Tickets"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 334,
+            "lang": "en",
+            "keystr": "customertickets_title",
+            "value": "Customer Tickets"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 335,
+            "lang": "en",
+            "keystr": "customertickets_comments",
+            "value": "Comments"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 336,
+            "lang": "es",
+            "keystr": "customertickets_comments",
+            "value": "Comentarios"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 337,
+            "lang": "es",
+            "keystr": "customertickets_signature",
+            "value": "Signature"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 338,
+            "lang": "en",
+            "keystr": "customertickets_signature",
+            "value": "Signature"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 339,
+            "lang": "es",
+            "keystr": "customertickets_file",
+            "value": "Archivo"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 340,
+            "lang": "en",
+            "keystr": "customertickets_file",
+            "value": "File"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 341,
+            "lang": "en",
+            "keystr": "menuexample_title",
+            "value": "Examples"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 342,
+            "lang": "es",
+            "keystr": "menuexample_title",
+            "value": "Ejemplos"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 343,
+            "lang": "es",
+            "keystr": "customers_report_title",
+            "value": "Reporte de clientes"
+        },
+        {
+            "filter": "menu",
+            "site": "STRING_NULL",
+            "id": 344,
+            "lang": "en",
+            "keystr": "customers_report_title",
+            "value": "Customers Report"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 345,
+            "lang": "en",
+            "keystr": "emailfileexample_title",
+            "value": "Sending Email with File"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 346,
+            "lang": "es",
+            "keystr": "emailfileexample_title",
+            "value": "Enviar email con archivo"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 349,
+            "lang": "es",
+            "keystr": "signeddocuments_title",
+            "value": "Documentos firmados"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 350,
+            "lang": "en",
+            "keystr": "signeddocuments_title",
+            "value": "Signed documents"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 351,
+            "lang": "es",
+            "keystr": "signeddocuments_text",
+            "value": "Texto"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 352,
+            "lang": "en",
+            "keystr": "signeddocuments_text",
+            "value": "Text"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 353,
+            "lang": "en",
+            "keystr": "signeddocuments_firm",
+            "value": "Firm"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 354,
+            "lang": "es",
+            "keystr": "signeddocuments_firm",
+            "value": "Firma"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 355,
+            "lang": "es",
+            "keystr": "placesreportform_title",
+            "value": "Reporte de lugares"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 356,
+            "lang": "en",
+            "keystr": "placesreportform_title",
+            "value": "Places report"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 357,
+            "lang": "en",
+            "keystr": "mixedendpoints_title",
+            "value": "MixedEndpoints Example"
+        },
+        {
+            "filter": "form",
+            "site": "STRING_NULL",
+            "id": 358,
+            "lang": "es",
+            "keystr": "mixedendpoints_title",
+            "value": "Ejemplo de diferentes endpoints"
         }
     ],
     "columnpk": "id",

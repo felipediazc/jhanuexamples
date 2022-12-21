@@ -1,0 +1,333 @@
+{
+    "data": [
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOpenDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOpenDatabaseConObj\",\"id\":\"624\",\"outputvar\":\"con\",\"jdbc\":\"12-rmm\",\"autocommit\":true}",
+            "eventaction": "INT_NULL",
+            "description": "Open database connection                    ",
+            "jdbc": "12-rmm",
+            "id": 727,
+            "event": 135,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCloseDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCloseDatabaseConObj\",\"id\":\"626\",\"outputvar\":\"con\"}",
+            "eventaction": "INT_NULL",
+            "description": "Closes database connection                    ",
+            "jdbc": "STRING_NULL",
+            "id": 730,
+            "event": 135,
+            "seq": 3,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOutputContent",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOutputContentObj\",\"id\":\"627\",\"outputvar\":\"jsonInsertResult\",\"outputcode\":\"200\",\"example\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 731,
+            "event": 135,
+            "seq": 4,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteUpdate",
+            "actiondata": "{\"data\":[{\"key\":\"text\",\"value\":\"STRING\"},{\"key\":\"signaturewidget\",\"value\":\"STRING\"},{\"key\":\"_JNUUSERID_\",\"value\":\"INTEGER\"}],\"sql\":\"INSERT INTO signeddocuments (document, sign, userid) VALUES (?, ?, ?)\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteUpdateObj\",\"id\":\"734\",\"outputvar\":\"jsonInsertResult\",\"jdbc\":\"con\"}",
+            "eventaction": "INT_NULL",
+            "description": "Inserts into the  signed documents table                   ",
+            "jdbc": "STRING_NULL",
+            "id": 734,
+            "event": 135,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOpenDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOpenDatabaseConObj\",\"id\":\"735\",\"outputvar\":\"con\",\"jdbc\":\"12-rmm\",\"autocommit\":true}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "12-rmm",
+            "id": 735,
+            "event": 137,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuVar",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuVarObj\",\"id\":\"736\",\"varname\":\"id\",\"varvalue\":\"id\",\"type\":\"REQUEST_PARAMETER_INTEGER\"}",
+            "eventaction": "INT_NULL",
+            "description": "id declaration                    ",
+            "jdbc": "STRING_NULL",
+            "id": 736,
+            "event": 137,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteSql",
+            "actiondata": "{\"data\":[{\"key\":\"id\",\"value\":\"INTEGER\"}],\"sql\":\"SELECT document, sign FROM signeddocuments WHERE id = ?\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteSqlObj\",\"id\":\"737\",\"outputvar\":\"documentsJson\",\"jdbc\":\"con\",\"paginate\":false,\"smartsql\":false,\"maxreg\":\"\",\"pagevar\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 737,
+            "event": 137,
+            "seq": 3,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCloseDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCloseDatabaseConObj\",\"id\":\"738\",\"outputvar\":\"con\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 738,
+            "event": 137,
+            "seq": 4,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"739\",\"code\":\"documentsJson = Common.getFirstData(documentsJson);\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 739,
+            "event": 137,
+            "seq": 5,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCreateHtml",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCreateHtmlObj\",\"id\":\"740\",\"outputvar\":\"html\",\"html\":\"<html>\\n    <head>\\n    <\/head>\\n    <body>\\n        <p>${documentsJson.document} <\/p>\\n        <br/><br/>\\n        <p><img src=\\\"${documentsJson.sign}\\\"/><\/p>\\n    <\/body>\\n<\/html>\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 740,
+            "event": 137,
+            "seq": 6,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"741\",\"code\":\"FdcPdf.htmlToPdfFromString(request, html, os);\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 741,
+            "event": 137,
+            "seq": 7,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        }
+    ],
+    "columnpk": "id",
+    "table": "jnu_eventactions",
+    "dependencies": [
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_actionscripts"
+        },
+        {
+            "data": [{"sitename": "DEFAULT"}],
+            "columnpk": "sitename",
+            "updateOnExist": false,
+            "table": "jnu_sites"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "usercreate": "admin@localhost.com",
+                "regdate": "2022-11-08 11:14:31.0",
+                "id": "12-example"
+            }],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_projects"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_jdbc"
+        },
+        {
+            "data": [{
+                "css": ".signaturewrapper {\n  position: relative;\n  width: 600px;\n  height: 200px;\n  -moz-user-select: none;\n  -webkit-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  border: 1px solid #000;\n}\n\n.signature-pad {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width:600px;\n  height:200px;\n}",
+                "description": "Example about how to integrate external library",
+                "project": "12-example",
+                "jdbc": "STRING_NULL",
+                "showtitle": true,
+                "usecache": false,
+                "title": "signeddocuments_title",
+                "jshead": "var signaturePad = new SignaturePad(document.getElementById('signature-pad'), {\n  backgroundColor: 'rgba(255, 255, 255, 0)',\n  penColor: 'rgb(0, 0, 0)'\n});\n\nvar cancelButton = document.getElementById('clear');\n\ncancelButton.addEventListener('click', function (event) {\n  signaturePad.clear();\n});\n\n\n\n$(\"#saveButton\").click(function() {\n  var form = $(\"#Form12-signeddocuemnts\");\n  if(signaturePad.isEmpty()){\n      errorMsg(\"must sign document\");\n  } else if(form.valid()){\n     $(\"#signaturewidget\").val(signaturePad.toDataURL());\n     doBlockUi();\n     $.post(\"../../ws/json/12-signeddocuemnts/firm\", $(\"#Form12-signeddocuemnts\").serialize(), function (res) {\n     }).done(function (res) {\n         $.unblockUI();\n         var json = eval(res);\n         if (json) {\n             if (json.error) {\n                 errorMsg(json.error);\n             } else {\n                 if(window.jnu_postUserCallBack){\n                    window.jnu_postUserCallBack(this,json);\n                 } else {\n                    //window.location = \"/rp/12-itf/12-podeasamblealist\";\n                 }\n             }\n         }\n     }).fail(function (res) {\n         $.unblockUI();\n         errorMsg(common_error_network);\n     });\n  }\n});",
+                "jsbody": "STRING_NULL",
+                "jsonobject": "STRING_NULL",
+                "componenttype": "FORM",
+                "usercreate": "admin@localhost.com",
+                "id": "12-signeddocuemnts",
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_components"
+        },
+        {
+            "data": [
+                {
+                    "valbyrequest": "STRING_NULL",
+                    "valbyquery": "STRING_NULL",
+                    "dependon": "STRING_NULL",
+                    "column": "STRING_NULL",
+                    "tabgroup": "STRING_NULL",
+                    "label": "signeddocuments_text",
+                    "showlabel": true,
+                    "varname": "text",
+                    "canbenull": false,
+                    "component": "12-signeddocuemnts",
+                    "valbydefault": "STRING_NULL",
+                    "size": "INT_NULL",
+                    "datatype": "TEXTAREA",
+                    "usercreate": "admin@localhost.com",
+                    "action": "STRING_NULL",
+                    "json": "STRING_NULL",
+                    "id": 129,
+                    "placeholder": "STRING_NULL",
+                    "seq": 1,
+                    "userupdate": "admin@localhost.com"
+                },
+                {
+                    "valbyrequest": "STRING_NULL",
+                    "valbyquery": "STRING_NULL",
+                    "dependon": "STRING_NULL",
+                    "column": "STRING_NULL",
+                    "tabgroup": "STRING_NULL",
+                    "label": "STRING_NULL",
+                    "showlabel": false,
+                    "varname": "signaturewidget",
+                    "canbenull": false,
+                    "component": "12-signeddocuemnts",
+                    "valbydefault": "STRING_NULL",
+                    "size": "INT_NULL",
+                    "datatype": "USERDEFINED",
+                    "usercreate": "admin@localhost.com",
+                    "action": "STRING_NULL",
+                    "json": "{\"content\":\"<script src=\\\"https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js\\\"><\/script>\\n\\n<div class=\\\"signaturewrapper\\\">\\n  <canvas id=\\\"signature-pad\\\" class=\\\"signature-pad\\\" width=600 height=200><\/canvas>\\n<\/div>\\n<div>\\n  <input type=\\\"button\\\" name=\\\"clear\\\" id=\\\"clear\\\" value=\\\"Clean\\\">\\n<\/div>\"}",
+                    "id": 130,
+                    "placeholder": "STRING_NULL",
+                    "seq": 2,
+                    "userupdate": "admin@localhost.com"
+                }
+            ],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_componentparts"
+        },
+        {
+            "data": [
+                {
+                    "component": "12-signeddocuemnts",
+                    "name": "firm",
+                    "project": "12-example",
+                    "conf": "{\"eventcontenttype\":\"application/json;charset=UTF-8\",\"requestcontenttype\":\"application/x-www-form-urlencoded\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":false,\"eventexusing\":\"ajax\",\"submitdestiny\":\"\",\"eventmethod\":\"POST\",\"eventcors\":false,\"inputs\":[{\"checked\":false,\"id\":\"129\",\"label\":\"signeddocuments_text\",\"varname\":\"text\"},{\"checked\":false,\"id\":\"130\",\"varname\":\"signaturewidget\"}],\"outputs\":[{\"outputcode\":\"200\",\"outputvar\":\"jsonInsertResult\",\"checked\":true,\"id\":\"627\",\"example\":{}}]}",
+                    "id": 135,
+                    "label": "STRING_NULL",
+                    "seq": 1,
+                    "enabled": true
+                },
+                {
+                    "component": "12-signeddocuemnts",
+                    "name": "save",
+                    "project": "12-example",
+                    "conf": "{\"eventcontenttype\":\"application/json;charset=UTF-8\",\"requestcontenttype\":\"application/x-www-form-urlencoded\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":true,\"eventexusing\":\"none\",\"submitdestiny\":\"\",\"eventmethod\":\"POST\",\"eventcors\":false,\"inputs\":[{\"checked\":false,\"id\":\"129\",\"label\":\"signeddocuments_text\",\"varname\":\"text\"},{\"checked\":false,\"id\":\"130\",\"varname\":\"signaturewidget\"}],\"outputs\":[]}",
+                    "id": 136,
+                    "label": "STRING_NULL",
+                    "seq": 2,
+                    "enabled": true
+                },
+                {
+                    "component": "12-signeddocuemnts",
+                    "name": "view",
+                    "project": "12-example",
+                    "conf": "{\"eventcontenttype\":\"application/pdf\",\"requestcontenttype\":\"\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":false,\"eventexusing\":\"ajax\",\"submitdestiny\":\"\",\"eventmethod\":\"GET\",\"eventcors\":false,\"inputs\":[{\"checked\":false,\"id\":\"129\",\"label\":\"signeddocuments_text\",\"varname\":\"text\"},{\"checked\":false,\"id\":\"130\",\"varname\":\"signaturewidget\"},{\"checked\":false,\"id\":\"736\",\"label\":\"id declaration                    \",\"varname\":\"id\"}],\"outputs\":[]}",
+                    "id": 137,
+                    "label": "STRING_NULL",
+                    "seq": 3,
+                    "enabled": true
+                }
+            ],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_events"
+        },
+        {
+            "data": [{"role": "GUEST"}],
+            "columnpk": "role",
+            "updateOnExist": false,
+            "table": "jnu_roles"
+        },
+        {
+            "data": [
+                {
+                    "eventid": 135,
+                    "site": "DEFAULT",
+                    "role": "GUEST"
+                },
+                {
+                    "eventid": 136,
+                    "site": "DEFAULT",
+                    "role": "GUEST"
+                },
+                {
+                    "eventid": 137,
+                    "site": "DEFAULT",
+                    "role": "GUEST"
+                }
+            ],
+            "columnpk": "eventid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_eventaccess"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "componentid": "12-signeddocuemnts",
+                "role": "GUEST"
+            }],
+            "columnpk": "componentid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_componentaccess"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_reportparts"
+        }
+    ]
+}

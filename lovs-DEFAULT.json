@@ -1,5 +1,21 @@
 {
-    "data": [],
+    "data": [
+        {
+            "site": "DEFAULT",
+            "json": "{\"data\":[{\"key\":\"INTEGER\",\"value\":\"departments\"}],\"sql\":\"SELECT id, name FROM jnu_cities WHERE department = ? ORDER BY name\",\"javaclass\":\"com.jhanu.core.obj.SqlObject\",\"jdbc\":\"12-jnucon\",\"usecache\":false}",
+            "id": "12-citylov"
+        },
+        {
+            "site": "DEFAULT",
+            "json": "{\"data\":[{\"key\":\"INTEGER\",\"value\":\"country\"}],\"sql\":\"SELECT id, name FROM jnu_departments WHERE country = ? ORDER BY name\",\"javaclass\":\"com.jhanu.core.obj.SqlObject\",\"jdbc\":\"12-jnucon\",\"usecache\":false}",
+            "id": "12-departments"
+        },
+        {
+            "site": "DEFAULT",
+            "json": "{\"data\":[],\"sql\":\"SELECT id, name FROM jnu_countries\",\"javaclass\":\"com.jhanu.core.obj.SqlObject\",\"jdbc\":\"12-jnucon\",\"usecache\":false}",
+            "id": "12-jnu_countries"
+        }
+    ],
     "columnpk": "id",
     "table": "jnu_lovs",
     "dependencies": []

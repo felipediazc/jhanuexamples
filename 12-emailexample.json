@@ -1,0 +1,184 @@
+{
+    "data": [
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuVar",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuVarObj\",\"id\":\"639\",\"varname\":\"jsonOutput\",\"varvalue\":\"new JSONObject()\",\"type\":\"USERDEF\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 639,
+            "event": 125,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuVar",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuVarObj\",\"id\":\"640\",\"varname\":\"adminEmail\",\"varvalue\":\"Common.getProperty(\\\"emailAdressTest\\\",_JNUSITE_)\",\"type\":\"USERDEF\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 640,
+            "event": 125,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuSendEmail",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuSendEmailObj\",\"id\":\"641\",\"to\":\"${adminEmail}, example@mailer.fdcapps.com, ${email} \",\"subject\":\"Jhanu Form test\",\"attachments\":\"\",\"body\":\"this is a test form email\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 641,
+            "event": 125,
+            "seq": 3,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOutputVar",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOutputVarObj\",\"id\":\"642\",\"outputvar\":\"jsonOutput\",\"outputcode\":\"200\",\"example\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 642,
+            "event": 125,
+            "seq": 4,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        }
+    ],
+    "columnpk": "id",
+    "table": "jnu_eventactions",
+    "dependencies": [
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_actionscripts"
+        },
+        {
+            "data": [{"sitename": "DEFAULT"}],
+            "columnpk": "sitename",
+            "updateOnExist": false,
+            "table": "jnu_sites"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "usercreate": "admin@localhost.com",
+                "regdate": "2022-11-08 11:14:31.0",
+                "id": "12-example"
+            }],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_projects"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_jdbc"
+        },
+        {
+            "data": [{
+                "css": "STRING_NULL",
+                "description": "Email Example",
+                "project": "12-example",
+                "jdbc": "STRING_NULL",
+                "showtitle": true,
+                "usecache": false,
+                "title": "emailexample_title",
+                "jshead": "STRING_NULL",
+                "jsbody": "STRING_NULL",
+                "jsonobject": "STRING_NULL",
+                "componenttype": "FORM",
+                "usercreate": "admin@localhost.com",
+                "id": "12-emailexample",
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_components"
+        },
+        {
+            "data": [{
+                "valbyrequest": "STRING_NULL",
+                "valbyquery": "STRING_NULL",
+                "dependon": "STRING_NULL",
+                "column": "STRING_NULL",
+                "tabgroup": "STRING_NULL",
+                "label": "emailexample_email",
+                "showlabel": true,
+                "varname": "email",
+                "canbenull": true,
+                "component": "12-emailexample",
+                "valbydefault": "STRING_NULL",
+                "size": "INT_NULL",
+                "datatype": "STRING",
+                "usercreate": "admin@localhost.com",
+                "action": "STRING_NULL",
+                "json": "STRING_NULL",
+                "id": 111,
+                "placeholder": "STRING_NULL",
+                "seq": 1,
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_componentparts"
+        },
+        {
+            "data": [{
+                "component": "12-emailexample",
+                "name": "send",
+                "project": "12-example",
+                "conf": "{\"eventcontenttype\":\"application/json;charset=UTF-8\",\"requestcontenttype\":\"application/x-www-form-urlencoded\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":true,\"eventexusing\":\"ajax\",\"submitdestiny\":\"\",\"eventmethod\":\"ALL\",\"eventcors\":false,\"inputs\":[{\"checked\":false,\"id\":\"111\",\"label\":\"emailexample_email\",\"varname\":\"email\"}],\"outputs\":[]}",
+                "id": 125,
+                "label": "STRING_NULL",
+                "seq": 1,
+                "enabled": true
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_events"
+        },
+        {
+            "data": [{"role": "GUEST"}],
+            "columnpk": "role",
+            "updateOnExist": false,
+            "table": "jnu_roles"
+        },
+        {
+            "data": [{
+                "eventid": 125,
+                "site": "DEFAULT",
+                "role": "GUEST"
+            }],
+            "columnpk": "eventid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_eventaccess"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "componentid": "12-emailexample",
+                "role": "GUEST"
+            }],
+            "columnpk": "componentid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_componentaccess"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_reportparts"
+        }
+    ]
+}

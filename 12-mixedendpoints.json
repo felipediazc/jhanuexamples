@@ -1,0 +1,442 @@
+{
+    "data": [
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOpenDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOpenDatabaseConObj\",\"id\":\"743\",\"outputvar\":\"con\",\"jdbc\":\"12-jnucon\",\"autocommit\":true}",
+            "eventaction": "INT_NULL",
+            "description": "open jhanu connection                    ",
+            "jdbc": "12-jnucon",
+            "id": 743,
+            "event": 139,
+            "seq": 5,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteSql",
+            "actiondata": "{\"data\":[{\"key\":\"country\",\"value\":\"STRING\"},{\"key\":\"department\",\"value\":\"STRING\"}],\"sql\":\"SELECT co.name AS country, d.name AS department, c.name AS city \\nFROM jnu_cities c \\nJOIN jnu_departments d ON c.department = d.id \\nJOIN jnu_countries co ON d.country = co.id \\nWHERE LOWER(co.name) LIKE '%' || LOWER(?) ||'%' \\nAND LOWER(d.name) LIKE '%' || LOWER(?) ||'%' \\nORDER BY co.name, d.name, c.name\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteSqlObj\",\"id\":\"744\",\"outputvar\":\"placesJson\",\"jdbc\":\"con\",\"paginate\":true,\"smartsql\":true,\"maxreg\":\"5\",\"pagevar\":\"page\"}",
+            "eventaction": "INT_NULL",
+            "description": "SQL sentence to get countries, departments and cities                 ",
+            "jdbc": "STRING_NULL",
+            "id": 744,
+            "event": 139,
+            "seq": 6,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCloseDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCloseDatabaseConObj\",\"id\":\"745\",\"outputvar\":\"con\"}",
+            "eventaction": "INT_NULL",
+            "description": "closes jhanu connection                    ",
+            "jdbc": "STRING_NULL",
+            "id": 745,
+            "event": 139,
+            "seq": 7,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOutputContent",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOutputContentObj\",\"id\":\"746\",\"outputvar\":\"placesJson\",\"outputcode\":\"200\",\"example\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 746,
+            "event": 139,
+            "seq": 8,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuVar",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuVarObj\",\"id\":\"747\",\"varname\":\"country\",\"varvalue\":\"country\",\"type\":\"REQUEST_PARAMETER_STRING\"}",
+            "eventaction": "INT_NULL",
+            "description": "country variable declaration                    ",
+            "jdbc": "STRING_NULL",
+            "id": 747,
+            "event": 139,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuVar",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuVarObj\",\"id\":\"748\",\"varname\":\"department\",\"varvalue\":\"department\",\"type\":\"REQUEST_PARAMETER_STRING\"}",
+            "eventaction": "INT_NULL",
+            "description": "department variable declaration                    ",
+            "jdbc": "STRING_NULL",
+            "id": 748,
+            "event": 139,
+            "seq": 3,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuVar",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuVarObj\",\"id\":\"749\",\"varname\":\"page\",\"varvalue\":\"page\",\"type\":\"REQUEST_PARAMETER_INTEGER\"}",
+            "eventaction": "INT_NULL",
+            "description": "page variable declaration                    ",
+            "jdbc": "STRING_NULL",
+            "id": 749,
+            "event": 139,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuJsonBody",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuJsonBodyObj\",\"id\":\"750\",\"code\":\"{\\n    \\\"systemname\\\" : \\\"Windows 10 Home\\\",\\n    \\\"devicetype\\\" : \\\"Windows\\\"\\n}\",\"type\":\"JSON\",\"varname\":\"devicesPayload\",\"datatypes\":[{\"varname\":\"devicesPayload\",\"type\":\"JSON\",\"description\":\"\",\"canbenull\":false},{\"varname\":\"devicesPayload.devicetype\",\"type\":\"java.lang.String\",\"description\":\"Device Type name\",\"canbenull\":true},{\"varname\":\"devicesPayload.systemname\",\"type\":\"java.lang.String\",\"description\":\"System name\",\"canbenull\":true}]}",
+            "eventaction": "INT_NULL",
+            "description": "devicesPayload                    ",
+            "jdbc": "STRING_NULL",
+            "id": 750,
+            "event": 140,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOpenDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOpenDatabaseConObj\",\"id\":\"751\",\"outputvar\":\"con\",\"jdbc\":\"12-rmm\",\"autocommit\":false}",
+            "eventaction": "INT_NULL",
+            "description": "Rmm Connection                    ",
+            "jdbc": "12-rmm",
+            "id": 751,
+            "event": 140,
+            "seq": 3,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteSql",
+            "actiondata": "{\"data\":[{\"key\":\"devicesPayload.devicetype\",\"value\":\"STRING\"}],\"sql\":\"SELECT id from devicetypes WHERE UPPER(name) = UPPER(?) \",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteSqlObj\",\"id\":\"752\",\"outputvar\":\"deviceTypeJson\",\"jdbc\":\"con\",\"paginate\":false,\"smartsql\":false,\"maxreg\":\"\",\"pagevar\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "Gets Device Type ID                    ",
+            "jdbc": "STRING_NULL",
+            "id": 752,
+            "event": 140,
+            "seq": 4,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"753\",\"code\":\"deviceTypeJson = Common.getFirstData(deviceTypeJson);\\n\"}",
+            "eventaction": "INT_NULL",
+            "description": "Gets First Record                    ",
+            "jdbc": "STRING_NULL",
+            "id": 753,
+            "event": 140,
+            "seq": 5,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuIf",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuIfObj\",\"id\":\"754\",\"condition\":\"deviceTypeJson.has(\\\"id\\\")\"}",
+            "eventaction": "INT_NULL",
+            "description": "Test if there is an existent  device type . If this is right then stes deviceTypeId value                 ",
+            "jdbc": "STRING_NULL",
+            "id": 754,
+            "event": 140,
+            "seq": 6,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuVar",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuVarObj\",\"id\":\"755\",\"varname\":\"deviceTypeId\",\"varvalue\":\"null\",\"type\":\"USERDEF\"}",
+            "eventaction": "INT_NULL",
+            "description": "deviceTypeId declaration                    ",
+            "jdbc": "STRING_NULL",
+            "id": 755,
+            "event": 140,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"756\",\"code\":\"deviceTypeId = deviceTypeJson.getInt(\\\"id\\\")\"}",
+            "eventaction": 754,
+            "description": "deviceTypeId assignation",
+            "jdbc": "STRING_NULL",
+            "id": 756,
+            "event": 140,
+            "seq": 7,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuElse",
+            "actiondata": "{}",
+            "eventaction": "INT_NULL",
+            "description": "Creates a new device type  and set its ID into deviceTypeId            ",
+            "jdbc": "STRING_NULL",
+            "id": 757,
+            "event": 140,
+            "seq": 7,
+            "enabled": true,
+            "userupdate": "STRING_NULL"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteUpdate",
+            "actiondata": "{\"data\":[{\"key\":\"devicesPayload.devicetype\",\"value\":\"STRING\"}],\"sql\":\"INSERT INTO devicetypes (name) VALUES (?)\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteUpdateObj\",\"id\":\"759\",\"outputvar\":\"deviceTypeJson\",\"jdbc\":\"con\"}",
+            "eventaction": 757,
+            "description": "creates a device type                    ",
+            "jdbc": "STRING_NULL",
+            "id": 759,
+            "event": 140,
+            "seq": 9,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"760\",\"code\":\"deviceTypeId = deviceTypeJson.getInt(\\\"pk1\\\")\"}",
+            "eventaction": 757,
+            "description": "Gets deviceTypeId                    ",
+            "jdbc": "STRING_NULL",
+            "id": 760,
+            "event": 140,
+            "seq": 10,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteUpdate",
+            "actiondata": "{\"data\":[{\"key\":\"devicesPayload.systemname\",\"value\":\"STRING\"},{\"key\":\"deviceTypeId\",\"value\":\"INTEGER\"}],\"sql\":\"INSERT INTO devices (systemname, devicetype) VALUES (?, ?)\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteUpdateObj\",\"id\":\"761\",\"outputvar\":\"devicesJson\",\"jdbc\":\"con\",\"catcherror\":false}",
+            "eventaction": "INT_NULL",
+            "description": "creates a device",
+            "jdbc": "STRING_NULL",
+            "id": 761,
+            "event": 140,
+            "seq": 8,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOutputContent",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOutputContentObj\",\"id\":\"762\",\"outputvar\":\"devicesJson\",\"outputcode\":\"200\",\"example\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "returns deviceTypeJson                    ",
+            "jdbc": "STRING_NULL",
+            "id": 762,
+            "event": 140,
+            "seq": 12,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCloseDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCloseDatabaseConObj\",\"id\":\"763\",\"outputvar\":\"con\"}",
+            "eventaction": "INT_NULL",
+            "description": "Closes and commit transaction                    ",
+            "jdbc": "STRING_NULL",
+            "id": 763,
+            "event": 140,
+            "seq": 11,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuIf",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuIfObj\",\"id\":\"764\",\"condition\":\"devicesJson.getString(\\\"error\\\") != \\\"\\\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "test if we got an error  and rollback the transaction if it is true                 ",
+            "jdbc": "STRING_NULL",
+            "id": 764,
+            "event": 140,
+            "seq": 9,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"765\",\"code\":\"log.info(\\\"TRYING TO ROLLBACK THE TRANSACTION\\\");\\ncon.rollback();\\nlog.info(\\\"TRANSACTION HAS BEEN ROLLEDBACK\\\");\\nlog.info(\\\"THIS IS AN EXAMPLE\\\");\"}",
+            "eventaction": 764,
+            "description": "rollback transaction                    ",
+            "jdbc": "STRING_NULL",
+            "id": 765,
+            "event": 140,
+            "seq": 12,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuElse",
+            "actiondata": "{}",
+            "eventaction": "INT_NULL",
+            "description": "if there is no error, then commit the transaction                    ",
+            "jdbc": "STRING_NULL",
+            "id": 766,
+            "event": 140,
+            "seq": 10,
+            "enabled": true,
+            "userupdate": "STRING_NULL"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"767\",\"code\":\"con.commit();\"}",
+            "eventaction": 766,
+            "description": "commit the transaction                    ",
+            "jdbc": "STRING_NULL",
+            "id": 767,
+            "event": 140,
+            "seq": 13,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        }
+    ],
+    "columnpk": "id",
+    "table": "jnu_eventactions",
+    "dependencies": [
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_actionscripts"
+        },
+        {
+            "data": [{"sitename": "DEFAULT"}],
+            "columnpk": "sitename",
+            "updateOnExist": false,
+            "table": "jnu_sites"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "usercreate": "admin@localhost.com",
+                "regdate": "2022-11-08 11:14:31.0",
+                "id": "12-example"
+            }],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_projects"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_jdbc"
+        },
+        {
+            "data": [{
+                "css": "STRING_NULL",
+                "description": "This endpoints has no UI, the idea is ussing them through swagger, postman or CURL",
+                "project": "12-example",
+                "jdbc": "STRING_NULL",
+                "showtitle": false,
+                "usecache": false,
+                "title": "mixedendpoints_title",
+                "jshead": "STRING_NULL",
+                "jsbody": "STRING_NULL",
+                "jsonobject": "STRING_NULL",
+                "componenttype": "FORM",
+                "usercreate": "admin@localhost.com",
+                "id": "12-mixedendpoints",
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_components"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_componentparts"
+        },
+        {
+            "data": [
+                {
+                    "component": "12-mixedendpoints",
+                    "name": "places",
+                    "project": "12-example",
+                    "conf": "{\"eventcontenttype\":\"application/json;charset=UTF-8\",\"requestcontenttype\":\"application/json\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":false,\"eventexusing\":\"ajax\",\"submitdestiny\":\"\",\"eventmethod\":\"GET\",\"eventcors\":false,\"inputs\":[{\"checked\":true,\"id\":\"749\",\"label\":\"page variable declaration                    \",\"varname\":\"page\"},{\"checked\":true,\"id\":\"747\",\"label\":\"country variable declaration                    \",\"varname\":\"country\"},{\"checked\":true,\"id\":\"748\",\"label\":\"department variable declaration                    \",\"varname\":\"department\"}],\"outputs\":[{\"outputcode\":\"200\",\"outputvar\":\"placesJson\",\"checked\":true,\"id\":\"746\",\"example\":{}}]}",
+                    "id": 139,
+                    "label": "STRING_NULL",
+                    "seq": 1,
+                    "enabled": true
+                },
+                {
+                    "component": "12-mixedendpoints",
+                    "name": "devices",
+                    "project": "12-example",
+                    "conf": "{\"eventcontenttype\":\"application/json;charset=UTF-8\",\"requestcontenttype\":\"application/json\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":false,\"eventexusing\":\"ajax\",\"submitdestiny\":\"\",\"eventmethod\":\"POST\",\"eventcors\":false,\"inputs\":[{\"checked\":false,\"id\":\"755\",\"label\":\"deviceTypeId declaration                    \",\"varname\":\"deviceTypeId\"},{\"checked\":true,\"id\":\"750\",\"label\":\"devicesPayload                    \",\"varname\":\"devicesPayload\"}],\"outputs\":[{\"outputcode\":\"200\",\"outputvar\":\"deviceTypeJson\",\"id\":\"762\",\"example\":{},\"checked\":true}]}",
+                    "id": 140,
+                    "label": "STRING_NULL",
+                    "seq": 2,
+                    "enabled": true
+                }
+            ],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_events"
+        },
+        {
+            "data": [{"role": "ALL"}],
+            "columnpk": "role",
+            "updateOnExist": false,
+            "table": "jnu_roles"
+        },
+        {
+            "data": [
+                {
+                    "eventid": 139,
+                    "site": "DEFAULT",
+                    "role": "ALL"
+                },
+                {
+                    "eventid": 140,
+                    "site": "DEFAULT",
+                    "role": "ALL"
+                }
+            ],
+            "columnpk": "eventid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_eventaccess"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "componentid": "12-mixedendpoints",
+                "role": "ALL"
+            }],
+            "columnpk": "componentid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_componentaccess"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_reportparts"
+        }
+    ]
+}

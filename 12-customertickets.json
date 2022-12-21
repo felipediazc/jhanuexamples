@@ -1,0 +1,511 @@
+{
+    "data": [
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOpenDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOpenDatabaseConObj\",\"id\":\"624\",\"outputvar\":\"con\",\"jdbc\":\"12-rmm\",\"autocommit\":true}",
+            "eventaction": "INT_NULL",
+            "description": "Open database connection                    ",
+            "jdbc": "12-rmm",
+            "id": 692,
+            "event": 131,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuIf",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuIfObj\",\"id\":\"628\",\"condition\":\"id == null\"}",
+            "eventaction": "INT_NULL",
+            "description": "Verify if is a new record                    ",
+            "jdbc": "STRING_NULL",
+            "id": 693,
+            "event": 131,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuElse",
+            "actiondata": "{}",
+            "eventaction": "INT_NULL",
+            "description": "updates an existing record                    ",
+            "jdbc": "STRING_NULL",
+            "id": 694,
+            "event": 131,
+            "seq": 3,
+            "enabled": true,
+            "userupdate": "STRING_NULL"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCloseDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCloseDatabaseConObj\",\"id\":\"626\",\"outputvar\":\"con\"}",
+            "eventaction": "INT_NULL",
+            "description": "Closes database connection                    ",
+            "jdbc": "STRING_NULL",
+            "id": 695,
+            "event": 131,
+            "seq": 5,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOutputContent",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOutputContentObj\",\"id\":\"627\",\"outputvar\":\"jsonInsertResult\",\"outputcode\":\"200\",\"example\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 696,
+            "event": 131,
+            "seq": 6,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteUpdate",
+            "actiondata": "{\"data\":[{\"key\":\"comments\",\"value\":\"STRING\"},{\"key\":\"jsonCustomer.id\",\"value\":\"INTEGER\"},{\"key\":\"fileid\",\"value\":\"INTEGER\"}],\"sql\":\"insert into customertickets (comments, customer, fileid) values (?, ?, ?)\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteUpdateObj\",\"id\":\"697\",\"outputvar\":\"jsonInsertResult\",\"jdbc\":\"con\"}",
+            "eventaction": 693,
+            "description": "Inserts data into devicetype table                     ",
+            "jdbc": "STRING_NULL",
+            "id": 697,
+            "event": 131,
+            "seq": 3,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteUpdate",
+            "actiondata": "{\"data\":[{\"key\":\"comments\",\"value\":\"STRING\"},{\"key\":\"fileid\",\"value\":\"INTEGER\"},{\"key\":\"id\",\"value\":\"INTEGER\"}],\"sql\":\"UPDATE customertickets SET comments = ?, fileid = ? WHERE id = ?\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteUpdateObj\",\"id\":\"698\",\"outputvar\":\"jsonInsertResult\",\"jdbc\":\"con\"}",
+            "eventaction": 694,
+            "description": "Updates data                    ",
+            "jdbc": "STRING_NULL",
+            "id": 698,
+            "event": 131,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteSql",
+            "actiondata": "{\"data\":[{\"key\":\"_JNUUSERID_\",\"value\":\"INTEGER\"}],\"sql\":\"SELECT id FROM customers WHERE userid = ?\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteSqlObj\",\"id\":\"699\",\"outputvar\":\"jsonCustomer\",\"jdbc\":\"con\",\"paginate\":false,\"smartsql\":false,\"maxreg\":\"\",\"pagevar\":\"\"}",
+            "eventaction": 693,
+            "description": "Gets customer Id                    ",
+            "jdbc": "STRING_NULL",
+            "id": 699,
+            "event": 131,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"700\",\"code\":\"jsonCustomer = Common.getFirstData(jsonCustomer);\\nif(fileid != null){\\n   jsonFile = MaeDriveDao.setTempFileAsFinal(request, \\\"fileid\\\");\\n   fileid = jsonFile.getInt(\\\"fileid\\\");\\n   MaeDriveDao.setPerms(fileid, \\\"GUEST\\\");\\n}\"}",
+            "eventaction": 693,
+            "description": "Gets jsonCustomer first record                    ",
+            "jdbc": "STRING_NULL",
+            "id": 700,
+            "event": 131,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOpenDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOpenDatabaseConObj\",\"id\":\"670\",\"outputvar\":\"rmmCon\",\"jdbc\":\"12-rmm\",\"autocommit\":false}",
+            "eventaction": "INT_NULL",
+            "description": "RMM connection                    ",
+            "jdbc": "12-rmm",
+            "id": 701,
+            "event": 132,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteSql",
+            "actiondata": "{\"data\":[{\"key\":\"id\",\"value\":\"INTEGER\"}],\"sql\":\"SELECT id, comments, fileid, signature, customer FROM customertickets WHERE id = ? \",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteSqlObj\",\"id\":\"702\",\"outputvar\":\"customerResultJson\",\"jdbc\":\"rmmCon\",\"paginate\":false,\"smartsql\":false,\"maxreg\":\"\",\"pagevar\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "Gets Customer data                    ",
+            "jdbc": "STRING_NULL",
+            "id": 702,
+            "event": 132,
+            "seq": 3,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"672\",\"code\":\"customerResultJson = Common.getFirstData(customerResultJson);\"}",
+            "eventaction": "INT_NULL",
+            "description": "get first data                    ",
+            "jdbc": "STRING_NULL",
+            "id": 703,
+            "event": 132,
+            "seq": 4,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCloseDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCloseDatabaseConObj\",\"id\":\"673\",\"outputvar\":\"rmmCon\"}",
+            "eventaction": "INT_NULL",
+            "description": "close rmmCon                    ",
+            "jdbc": "STRING_NULL",
+            "id": 704,
+            "event": 132,
+            "seq": 5,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOutputContent",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOutputContentObj\",\"id\":\"677\",\"outputvar\":\"customerResultJson\",\"outputcode\":\"200\",\"example\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "                    ",
+            "jdbc": "STRING_NULL",
+            "id": 710,
+            "event": 132,
+            "seq": 6,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuIf",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuIfObj\",\"id\":\"711\",\"condition\":\"id == null\"}",
+            "eventaction": "INT_NULL",
+            "description": "test if id is null                    ",
+            "jdbc": "STRING_NULL",
+            "id": 711,
+            "event": 132,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"712\",\"code\":\"emptyJson = new JSONObject()\\nreturn emptyJson;\"}",
+            "eventaction": 711,
+            "description": "creates and returns empty json object                    ",
+            "jdbc": "STRING_NULL",
+            "id": 712,
+            "event": 132,
+            "seq": 14,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"713\",\"code\":\"if(MaeDriveDao.isTempFile(request, \\\"fileid\\\")){\\n    jsonFile = MaeDriveDao.setTempFileAsFinal(request, \\\"fileid\\\");\\n    fileid = jsonFile.getInt(\\\"fileid\\\");\\n    \\n    lastFileId = MaeDriveDao.getLastFileId(request, \\\"fileid\\\");\\n    fileAccess.deleteFile(lastFileId);\\n    MaeDriveDao.setPerms(fileid, \\\"GUEST\\\");\\n}\\n\"}",
+            "eventaction": 694,
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 713,
+            "event": 131,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOpenDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOpenDatabaseConObj\",\"id\":\"632\",\"outputvar\":\"con\",\"jdbc\":\"12-rmm\",\"autocommit\":true}",
+            "eventaction": "INT_NULL",
+            "description": "Opens database connection                    ",
+            "jdbc": "12-rmm",
+            "id": 714,
+            "event": 134,
+            "seq": 1,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteUpdate",
+            "actiondata": "{\"data\":[{\"key\":\"id\",\"value\":\"INTEGER\"}],\"sql\":\"DELETE FROM customertickets WHERE id = ?\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteUpdateObj\",\"id\":\"715\",\"outputvar\":\"jsonInsertResult\",\"jdbc\":\"con\"}",
+            "eventaction": "INT_NULL",
+            "description": "Deletes record                    ",
+            "jdbc": "STRING_NULL",
+            "id": 715,
+            "event": 134,
+            "seq": 4,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCloseDatabaseCon",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCloseDatabaseConObj\",\"id\":\"634\",\"outputvar\":\"con\"}",
+            "eventaction": "INT_NULL",
+            "description": "closes database connection                    ",
+            "jdbc": "STRING_NULL",
+            "id": 716,
+            "event": 134,
+            "seq": 5,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuOutputContent",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuOutputContentObj\",\"id\":\"635\",\"outputvar\":\"jsonInsertResult\",\"outputcode\":\"200\",\"example\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "STRING_NULL",
+            "jdbc": "STRING_NULL",
+            "id": 717,
+            "event": 134,
+            "seq": 6,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuExecuteSql",
+            "actiondata": "{\"data\":[{\"key\":\"id\",\"value\":\"INTEGER\"}],\"sql\":\"SELECT fileid FROM customertickets WHERE id = ?\",\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuExecuteSqlObj\",\"id\":\"718\",\"outputvar\":\"jsonFiles\",\"jdbc\":\"con\",\"paginate\":false,\"smartsql\":false,\"maxreg\":\"\",\"pagevar\":\"\"}",
+            "eventaction": "INT_NULL",
+            "description": "Gets files id from record",
+            "jdbc": "STRING_NULL",
+            "id": 718,
+            "event": 134,
+            "seq": 2,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        },
+        {
+            "usercreate": "admin@localhost.com",
+            "actionclass": "com.fdcapps.jhanu.actions.JnuCodeBlock",
+            "actiondata": "{\"javaclass\":\"com.fdcapps.jhanu.actions.obj.JnuCodeBlockObj\",\"id\":\"719\",\"code\":\"jsonFiles = Common.getFirstData(jsonFiles);\\nif(jsonFiles.has(\\\"fileid\\\") && jsonFiles.fileid != \\\"\\\"){\\n    fileAccess.deleteFile(jsonFiles.fileid);\\n}\"}",
+            "eventaction": "INT_NULL",
+            "description": "Gets first record                    ",
+            "jdbc": "STRING_NULL",
+            "id": 719,
+            "event": 134,
+            "seq": 3,
+            "enabled": true,
+            "userupdate": "admin@localhost.com"
+        }
+    ],
+    "columnpk": "id",
+    "table": "jnu_eventactions",
+    "dependencies": [
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_actionscripts"
+        },
+        {
+            "data": [{"sitename": "DEFAULT"}],
+            "columnpk": "sitename",
+            "updateOnExist": false,
+            "table": "jnu_sites"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "usercreate": "admin@localhost.com",
+                "regdate": "2022-11-08 11:14:31.0",
+                "id": "12-example"
+            }],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_projects"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": false,
+            "table": "jnu_jdbc"
+        },
+        {
+            "data": [{
+                "css": "STRING_NULL",
+                "description": "Customer Tickets Form",
+                "project": "12-example",
+                "jdbc": "STRING_NULL",
+                "showtitle": true,
+                "usecache": false,
+                "title": "customertickets_title",
+                "jshead": "STRING_NULL",
+                "jsbody": "STRING_NULL",
+                "jsonobject": "{\"data\":[{\"key\":\"id\",\"value\":\"INTEGER\"}],\"javaclass\":\"com.jhanu.core.obj.DataFromServiceObj\",\"service\":\"132\"}",
+                "componenttype": "FORM",
+                "usercreate": "admin@localhost.com",
+                "id": "12-customertickets",
+                "userupdate": "admin@localhost.com"
+            }],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_components"
+        },
+        {
+            "data": [
+                {
+                    "valbyrequest": "STRING_NULL",
+                    "valbyquery": "STRING_NULL",
+                    "dependon": "STRING_NULL",
+                    "column": "STRING_NULL",
+                    "tabgroup": "STRING_NULL",
+                    "label": "customertickets_comments",
+                    "showlabel": true,
+                    "varname": "comments",
+                    "canbenull": false,
+                    "component": "12-customertickets",
+                    "valbydefault": "STRING_NULL",
+                    "size": "INT_NULL",
+                    "datatype": "TEXTAREA",
+                    "usercreate": "admin@localhost.com",
+                    "action": "STRING_NULL",
+                    "json": "STRING_NULL",
+                    "id": 125,
+                    "placeholder": "STRING_NULL",
+                    "seq": 2,
+                    "userupdate": "admin@localhost.com"
+                },
+                {
+                    "valbyrequest": "STRING_NULL",
+                    "valbyquery": "STRING_NULL",
+                    "dependon": "STRING_NULL",
+                    "column": "STRING_NULL",
+                    "tabgroup": "STRING_NULL",
+                    "label": "STRING_NULL",
+                    "showlabel": false,
+                    "varname": "id",
+                    "canbenull": true,
+                    "component": "12-customertickets",
+                    "valbydefault": "STRING_NULL",
+                    "size": "INT_NULL",
+                    "datatype": "HIDDEN",
+                    "usercreate": "admin@localhost.com",
+                    "action": "STRING_NULL",
+                    "json": "STRING_NULL",
+                    "id": 126,
+                    "placeholder": "STRING_NULL",
+                    "seq": 1,
+                    "userupdate": "admin@localhost.com"
+                },
+                {
+                    "valbyrequest": "STRING_NULL",
+                    "valbyquery": "STRING_NULL",
+                    "dependon": "STRING_NULL",
+                    "column": "STRING_NULL",
+                    "tabgroup": "STRING_NULL",
+                    "label": "customertickets_file",
+                    "showlabel": true,
+                    "varname": "fileid",
+                    "canbenull": false,
+                    "component": "12-customertickets",
+                    "valbydefault": "STRING_NULL",
+                    "size": "INT_NULL",
+                    "datatype": "FILE",
+                    "usercreate": "admin@localhost.com",
+                    "action": "STRING_NULL",
+                    "json": "{\"saveasuser\":true,\"folder\":\"customertickets\"}",
+                    "id": 127,
+                    "placeholder": "STRING_NULL",
+                    "seq": 3,
+                    "userupdate": "admin@localhost.com"
+                }
+            ],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_componentparts"
+        },
+        {
+            "data": [
+                {
+                    "component": "12-customertickets",
+                    "name": "save",
+                    "project": "12-example",
+                    "conf": "{\"eventcontenttype\":\"application/json;charset=UTF-8\",\"requestcontenttype\":\"application/x-www-form-urlencoded\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":true,\"eventexusing\":\"ajax\",\"submitdestiny\":\"\",\"eventmethod\":\"POST\",\"eventcors\":false,\"inputs\":[{\"checked\":true,\"id\":\"109\",\"varname\":\"id\"},{\"checked\":true,\"id\":\"110\",\"label\":\"form_devices_name\",\"varname\":\"name\"}],\"outputs\":[{\"outputcode\":\"200\",\"outputvar\":\"jsonInsertResult\",\"id\":\"627\",\"example\":{},\"checked\":true}]}",
+                    "id": 131,
+                    "label": "STRING_NULL",
+                    "seq": 1,
+                    "enabled": true
+                },
+                {
+                    "component": "12-customertickets",
+                    "name": "getdata",
+                    "project": "12-example",
+                    "conf": "{\"eventcontenttype\":\"application/json;charset=UTF-8\",\"requestcontenttype\":\"application/json\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":false,\"eventexusing\":\"ajax\",\"submitdestiny\":\"\",\"eventmethod\":\"GET\",\"eventcors\":false,\"inputs\":[{\"checked\":true,\"id\":\"126\",\"varname\":\"id\"},{\"checked\":false,\"id\":\"125\",\"label\":\"customertickets_comments\",\"varname\":\"comments\"}],\"outputs\":[{\"outputcode\":\"200\",\"outputvar\":\"customerResultJson\",\"checked\":true,\"id\":\"677\",\"example\":{}}]}",
+                    "id": 132,
+                    "label": "STRING_NULL",
+                    "seq": 2,
+                    "enabled": true
+                },
+                {
+                    "component": "12-customertickets",
+                    "name": "delete",
+                    "project": "12-example",
+                    "conf": "{\"eventcontenttype\":\"application/json;charset=UTF-8\",\"requestcontenttype\":\"application/x-www-form-urlencoded\",\"eventlanguage\":\"groovy\",\"eventshowbutton\":false,\"eventexusing\":\"ajax\",\"submitdestiny\":\"\",\"eventmethod\":\"POST\",\"eventcors\":false,\"inputs\":[{\"checked\":true,\"id\":\"126\",\"varname\":\"id\"},{\"id\":\"125\",\"label\":\"customertickets_comments\",\"varname\":\"comments\"},{\"id\":\"127\",\"label\":\"customertickets_file\",\"varname\":\"fileid\"}],\"outputs\":[{\"outputcode\":\"200\",\"outputvar\":\"jsonInsertResult\",\"checked\":true,\"id\":\"635\",\"example\":{}}]}",
+                    "id": 134,
+                    "label": "STRING_NULL",
+                    "seq": 3,
+                    "enabled": true
+                }
+            ],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_events"
+        },
+        {
+            "data": [{"role": "GUEST"}],
+            "columnpk": "role",
+            "updateOnExist": false,
+            "table": "jnu_roles"
+        },
+        {
+            "data": [
+                {
+                    "eventid": 131,
+                    "site": "DEFAULT",
+                    "role": "GUEST"
+                },
+                {
+                    "eventid": 132,
+                    "site": "DEFAULT",
+                    "role": "GUEST"
+                },
+                {
+                    "eventid": 134,
+                    "site": "DEFAULT",
+                    "role": "GUEST"
+                }
+            ],
+            "columnpk": "eventid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_eventaccess"
+        },
+        {
+            "data": [{
+                "site": "DEFAULT",
+                "componentid": "12-customertickets",
+                "role": "GUEST"
+            }],
+            "columnpk": "componentid,site,role",
+            "updateOnExist": false,
+            "table": "jnu_componentaccess"
+        },
+        {
+            "data": [],
+            "columnpk": "id",
+            "updateOnExist": true,
+            "table": "jnu_reportparts"
+        }
+    ]
+}
